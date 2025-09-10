@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>What do you truly desire?</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <main id="app">
+        <div id="desire-screen">
+            <h1>What do you truly desire?</h1>
+            <div class="desire-buttons">
+                <button class="desire-button pink" aria-label="Choose Success">Success</button>
+                <button class="desire-button blue" aria-label="Choose Freedom">Freedom</button>
+                <button class="desire-button green" aria-label="Choose Creation">Creation</button>
+                <button class="desire-button yellow" aria-label="Choose Love">Love</button>
+                <button class="desire-button orange" aria-label="Choose Peace">Peace</button>
+            </div>
+        </div>
+
+        <div id="plan-screen" class="hidden">
+            <h2>Day 1</h2>
+            <div class="egos-container">
+                <div class="ego-card" data-ego="achiever">
+                    <div class="ego-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 7h-4V5c0-1.1-.9-2-2-2h-4c-1.1 0-2 .9-2 2v2H4c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V9c0-1.1-.9-2-2-2zM10 5h4v2h-4V5z"></path></svg>
+                    </div>
+                    <h3>Achiever</h3>
+                    <div class="time-allocator">
+                        <button class="time-btn minus-btn" aria-label="Decrease hours for Achiever">-</button>
+                        <span class="time-display">4 hrs</span>
+                        <button class="time-btn plus-btn" aria-label="Increase hours for Achiever">+</button>
+                    </div>
+                </div>
+                <div class="ego-card" data-ego="creator">
+                    <div class="ego-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"></path></svg>
+                    </div>
+                    <h3>Creator</h3>
+                    <div class="time-allocator">
+                        <button class="time-btn minus-btn" aria-label="Decrease hours for Creator">-</button>
+                        <span class="time-display">4 hrs</span>
+                        <button class="time-btn plus-btn" aria-label="Increase hours for Creator">+</button>
+                    </div>
+                </div>
+                <div class="ego-card" data-ego="wanderer">
+                    <div class="ego-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M22 2 11 13H2l9.05-9.05L2 22l20-20z"></path></svg>
+                    </div>
+                    <h3>Wanderer</h3>
+                    <div class="time-allocator">
+                        <button class="time-btn minus-btn" aria-label="Decrease hours for Wanderer">-</button>
+                        <span class="time-display">4 hrs</span>
+                        <button class="time-btn plus-btn" aria-label="Increase hours for Wanderer">+</button>
+                    </div>
+                </div>
+                <div class="ego-card" data-ego="warrior">
+                    <div class="ego-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 1 3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z"></path></svg>
+                    </div>
+                    <h3>Warrior</h3>
+                     <div class="time-allocator">
+                        <button class="time-btn minus-btn" aria-label="Decrease hours for Warrior">-</button>
+                        <span class="time-display">4 hrs</span>
+                        <button class="time-btn plus-btn" aria-label="Increase hours for Warrior">+</button>
+                    </div>
+                </div>
+                <div class="ego-card span-two" data-ego="survivor">
+                    <div class="ego-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"></path></svg>
+                    </div>
+                    <h3>Survivor</h3>
+                     <div class="time-allocator">
+                        <button class="time-btn minus-btn" aria-label="Decrease hours for Survivor">-</button>
+                        <span class="time-display">8 hrs</span>
+                        <button class="time-btn plus-btn" aria-label="Increase hours for Survivor">+</button>
+                    </div>
+                </div>
+            </div>
+            <button id="start-day-button">Start the Day</button>
+        </div>
+
+        <div id="log-screen" class="hidden">
+            <h2>End of Day 5</h2>
+            <div class="log-container">
+                <div class="log-entry">
+                    <h4>[Warrior's Diary]</h4>
+                    <p>I finally broke. It felt like all the noise in the world was attacking me. The moment I wanted to give up on everything, I heard a faint melody coming from somewhere.</p>
+                    <p class="system-message">[SYSTEM]: 'Warrior' has fallen into a 'Will Lost' state! All stats are temporarily decreased.</p>
+                </div>
+                <div class="log-entry">
+                    <h4>[Creator's Diary]</h4>
+                    <p>Hearing the Warrior's screams of pain from outside, I grabbed my brush without thinking. I poured all that despair, that anger, that sadness... onto the canvas. This is not a painting for me. This is a song for the Warrior.</p>
+                    <p class="system-message">[SYSTEM]: 'Creator' has completed the masterpiece, 'Warrior's Cry'! 'Creativity' has greatly increased, and the 'Alchemy of Emotions' ability has been acquired.</p>
+                </div>
+            </div>
+            <button id="next-day-button">Proceed to Next Day</button>
+        </div>
+    </main>
+    <script type="module" src="index.tsx"></script>
+  </body>
+</html>

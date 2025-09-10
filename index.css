@@ -1,0 +1,349 @@
+/**
+ * @license
+ * SPDX-License-Identifier: Apache-2.0
+*/
+
+:root {
+  --background-color: #1A1A1A;
+  --card-background: #2C2C2C;
+  --text-color: #FFFFFF;
+  --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+
+  --pink: #FF69B4;
+  --blue: #1E90FF;
+  --green: #32CD32;
+  --yellow: #FFD700;
+  --orange: #FFA500;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  font-family: var(--font-family);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+#app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 1200px;
+  height: 100%;
+  padding: 1rem;
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* --- Desire Screen --- */
+#desire-screen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+  width: 100%;
+}
+
+h1 {
+  font-size: 3.5rem;
+  font-weight: 300;
+  letter-spacing: 1px;
+  margin: 0;
+}
+
+.desire-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.desire-button {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  border: 3px solid transparent;
+  color: var(--text-color);
+  font-size: 1.25rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out, box-shadow 0.3s ease-in-out, border-color 0.3s ease-in-out;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.desire-button:hover, .desire-button:focus-visible {
+  transform: scale(1.08);
+  outline: none;
+}
+
+.desire-button.selected {
+  transform: scale(1.08);
+  border-color: var(--text-color);
+}
+
+.pink { --color: var(--pink); background-color: var(--pink); box-shadow: 0 0 20px var(--pink); }
+.blue { --color: var(--blue); background-color: var(--blue); box-shadow: 0 0 20px var(--blue); }
+.green { --color: var(--green); background-color: var(--green); box-shadow: 0 0 20px var(--green); }
+.yellow { --color: var(--yellow); background-color: var(--yellow); box-shadow: 0 0 20px var(--yellow); }
+.orange { --color: var(--orange); background-color: var(--orange); box-shadow: 0 0 20px var(--orange); }
+
+.pink:hover, .pink:focus-visible, .pink.selected { box-shadow: 0 0 35px var(--pink); }
+.blue:hover, .blue:focus-visible, .blue.selected { box-shadow: 0 0 35px var(--blue); }
+.green:hover, .green:focus-visible, .green.selected { box-shadow: 0 0 35px var(--green); }
+.yellow:hover, .yellow:focus-visible, .yellow.selected { box-shadow: 0 0 35px var(--yellow); }
+.orange:hover, .orange:focus-visible, .orange.selected { box-shadow: 0 0 35px var(--orange); }
+
+
+/* --- Plan Screen --- */
+#plan-screen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  width: 100%;
+  height: 100%;
+}
+
+#plan-screen h2, #log-screen h2 {
+  font-size: 3rem;
+  font-weight: 300;
+  margin: 0;
+}
+
+.egos-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 800px;
+}
+
+.ego-card {
+  background-color: var(--card-background);
+  border-radius: 16px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.ego-card.span-two {
+    grid-column: 1 / -1;
+    max-width: 390px;
+    justify-self: center;
+}
+
+.ego-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ego-icon svg {
+    width: 50%;
+    height: 50%;
+    fill: var(--text-color);
+    opacity: 0.8;
+}
+
+.ego-card h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.time-allocator {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 0.5rem;
+}
+
+.time-btn {
+    background-color: #444;
+    color: var(--text-color);
+    border: none;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    font-size: 1.8rem;
+    font-weight: 300;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+    padding-bottom: 4px;
+}
+
+.time-btn:hover, .time-btn:focus-visible {
+    background-color: #555;
+    outline: none;
+}
+
+.time-display {
+    font-size: 1.25rem;
+    font-weight: 600;
+    min-width: 70px;
+    text-align: center;
+}
+
+#start-day-button {
+  background-color: var(--green);
+  color: var(--text-color);
+  border: none;
+  border-radius: 50px;
+  padding: 1rem 2.5rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 0 20px color-mix(in srgb, var(--green) 70%, black);
+}
+
+#start-day-button:hover, #start-day-button:focus-visible {
+  transform: scale(1.05);
+  background-color: color-mix(in srgb, var(--green) 90%, white);
+  outline: none;
+}
+
+/* --- Log Screen --- */
+#log-screen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  width: 100%;
+  height: 100%;
+}
+
+.log-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 700px;
+}
+
+.log-entry {
+  background-color: var(--card-background);
+  border-radius: 12px;
+  padding: 1.5rem;
+  text-align: left;
+  border-left: 5px solid var(--blue);
+}
+
+.log-entry h4 {
+  margin: 0 0 0.75rem 0;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.log-entry p {
+  margin: 0;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.system-message {
+  margin-top: 1rem !important;
+  color: var(--blue);
+  font-style: italic;
+  opacity: 0.9;
+}
+
+#next-day-button {
+  background-color: var(--blue);
+  color: var(--text-color);
+  border: none;
+  border-radius: 50px;
+  padding: 1rem 2.5rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 0 20px color-mix(in srgb, var(--blue) 70%, black);
+}
+
+#next-day-button:hover, #next-day-button:focus-visible {
+  transform: scale(1.05);
+  background-color: color-mix(in srgb, var(--blue) 90%, white);
+  outline: none;
+}
+
+/* --- Screen Transitions --- */
+.fade-in {
+    animation: fadeIn 0.5s ease-in forwards;
+}
+
+.fade-out {
+    animation: fadeOut 0.5s ease-out forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeOut {
+    from { opacity: 1; transform: translateY(0); }
+    to { opacity: 0; transform: translateY(-10px); }
+}
+
+
+/* --- Responsive styles --- */
+@media (max-width: 800px) {
+  #desire-screen { gap: 2rem; }
+  h1 { font-size: 2.5rem; }
+  .desire-button { width: 120px; height: 120px; font-size: 1rem; }
+
+  #plan-screen, #log-screen { gap: 1.5rem; }
+  #plan-screen h2, #log-screen h2 { font-size: 2.2rem; }
+  .egos-container { 
+      grid-template-columns: 1fr;
+      max-width: 400px;
+   }
+  .ego-card.span-two {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+    h1 { font-size: 2rem; }
+    .desire-buttons { gap: 1.5rem; }
+    .desire-button { width: 100px; height: 100px; font-size: 0.9rem; }
+    .ego-card { padding: 1.5rem; }
+}
